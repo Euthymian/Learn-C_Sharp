@@ -137,28 +137,25 @@ static class Practice
         System.Console.Write("Enter the size of the board: ");
         int n = Convert.ToInt32(Console.ReadLine());
         System.Console.WriteLine("Enter mines map: ");
-        string?[] map = new string[n];
+        string[] map = new string[n];
         for(int i=0;i<n;i++) {
             map[i] = Console.ReadLine();
         }
         char[,] res = new char[n,n];
         for (int i=0;i<n;i++) {
             for (int j=0;j<n;j++) {
-                if (map[i][j] == '*') res[i,j] = '*';
-                else res[i,j] = '0';
-            }
-        }
-        for (int i=0;i<n;i++) {
-            for (int j=0;j<n;j++) {
-                if (res[i,j] == '*') {
+                if (map[i][j] == '*'){
+                    res[i,j] = '*';
                     for (int k=0;k<8;k++) {
                         int x = i + dx[k];
                         int y = j + dy[k];
                         if (x >= 0 && x < n && y >= 0 && y < n && res[x,y] != '*') {
-                            res[x,y]++;
+                            if (res[x,y] == '\0') res[x,y] = '1'; 
+                            else res[x,y]++;
                         }
                     }
                 }
+                if (res[i,j] == '\0') res[i,j] = '0';
             }
         }
         System.Console.WriteLine("Result: ");
