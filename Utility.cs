@@ -22,11 +22,9 @@ static class Practice
             Console.WriteLine("Solution of {0}x + {1} = 0 is {2}",a,b,(double)-b / a);
         }
     }   
-
     public static void GetSystemTime() {
         Console.WriteLine(DateTime.Now);
     }
-
     public static void MultiTable()
     {
         for (int i = 1; i <= 9; i++)
@@ -37,5 +35,21 @@ static class Practice
             }
             Console.WriteLine();
         }
+    }
+    public static void Prime() {
+        Console.Write("n = ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        if (n%2==0&&n!=2 || n==1) {
+            Console.WriteLine("Not a prime!");
+            return;
+        }
+        for(int i=3;i<=Math.Sqrt(n);i+=2){
+            if(n%i==0) {
+                Console.WriteLine("Not a prime!");
+                return;
+            }
+        }
+        Console.WriteLine("A prime!");
+        return;
     }
 }

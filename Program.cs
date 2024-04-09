@@ -11,6 +11,8 @@ internal class Program
 
         // Practice.Linear();
         // Practice.GetSystemTime();
-        Practice.MultiTable();
+        // Practice.MultiTable();
+
+        Practice.Prime();
     }
 }
