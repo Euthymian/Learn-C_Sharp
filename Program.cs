@@ -9,6 +9,7 @@ internal class Program
         // Student student = new Student("John", 20, "Computer Science", "123456");
         // student.Print();
 
-        Utility.Linear();
+        // Practice.Linear();
+        Practice.GetSystemTime();
     }
 }

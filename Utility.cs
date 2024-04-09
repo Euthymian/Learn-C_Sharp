@@ -1,4 +1,4 @@
-static class Utility
+static class Practice
 {
     public static void Linear()
     {
@@ -19,7 +19,11 @@ static class Utility
         }
         else
         {
-            Console.WriteLine((double)-b / a);
+            Console.WriteLine("Solution of {0}x + {1} = 0 is {2}",a,b,(double)-b / a);
         }
+    }   
+
+    public static void GetSystemTime() {
+        Console.WriteLine(DateTime.Now);
     }
 }
