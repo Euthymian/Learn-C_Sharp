@@ -166,4 +166,26 @@ static class Practice
             Console.WriteLine();
         }
     }
+    public static void TemperatureConverter() {
+        System.Console.WriteLine("___Temperature Converter___\n1: Celsius to Fahrenheit\n2: Fahrenheit to Celsius\nChoose an option: ");
+        int option = Convert.ToInt32(Console.ReadLine());
+        double c,f;
+        switch(option) {
+            case 1:
+                System.Console.Write("Enter the temperature in Celsius: ");
+                c = Convert.ToDouble(Console.ReadLine());
+                f = c * 9 / 5 + 32;
+                System.Console.WriteLine("Temperature in Fahrenheit: " + f);
+                break;
+            case 2:
+                System.Console.Write("Enter the temperature in Fahrenheit: ");
+                f = Convert.ToDouble(Console.ReadLine());
+                c = (f - 32) * 5 / 9;
+                System.Console.WriteLine("Temperature in Celsius: " + c);
+                break;
+            default:
+                System.Console.WriteLine("Invalid option!");
+                break;
+        }
+    }
 }

@@ -13,6 +13,6 @@ internal class Program
         // Practice.GetSystemTime();
         // Practice.MultiTable();
 
-        Practice.MineSweeperEasy();
+        Practice.TemperatureConverter();
     }
 }
