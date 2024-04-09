@@ -52,4 +52,62 @@ static class Practice
         Console.WriteLine("A prime!");
         return;
     }
+    public static void SumArr() {
+        int[] a = {1,2,3,4,5};
+        int sum = 0;
+        foreach(int i in a) {
+            sum+=i;
+        }
+        Console.WriteLine(sum);
+    }
+    public static void FindStudent() {
+        string[] students = {"John", "Jane", "Doe", "Smith", "Alex", "Johan", "Dinh", "Haa"};
+        string? studentIn = Console.ReadLine();
+        foreach(string student in students) {
+            if(studentIn==student) {
+                Console.WriteLine("Found!");
+                return;
+            }
+        }
+        Console.WriteLine("Not found!");
+    }
+    public static void MaxArr() {
+        int[] a = {1,2,3,4,5};
+        int max = a[0];
+        foreach(int i in a) {
+            if(i>max) {
+                max = i;
+            }
+        }
+        Console.WriteLine(max);
+    }
+    public static void InsertArr() {
+        System.Console.Write("n = ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[n];
+        for(int i=0;i<n/2;i++) {
+            a[i] = i+4;
+        }
+        System.Console.Write("num = ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        System.Console.Write("index = ");
+        int index = Convert.ToInt32(Console.ReadLine());
+        if (index <= 1 || index >= n) {
+            Console.WriteLine("Invalid index!");
+            return;
+        }   
+        index--;
+        System.Console.WriteLine("Before inserting:");
+        foreach(int i in a) {
+            System.Console.Write(i + " ");
+        }
+        for(int i=n/2;i>index;i--) {
+            a[i] = a[i-1];
+        }
+        a[index] = num;
+        System.Console.WriteLine("\nAfter inserting:");
+        foreach(int i in a) {
+            System.Console.Write(i + " ");
+        }
+    }
 }
