@@ -10,6 +10,7 @@ internal class Program
         // student.Print();
 
         // Practice.Linear();
-        Practice.GetSystemTime();
+        // Practice.GetSystemTime();
+        Practice.MultiTable();
     }
 }
