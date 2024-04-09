@@ -90,24 +90,83 @@ static class Practice
         }
         System.Console.Write("num = ");
         int num = Convert.ToInt32(Console.ReadLine());
-        System.Console.Write("index = ");
-        int index = Convert.ToInt32(Console.ReadLine());
-        if (index <= 1 || index >= n) {
-            Console.WriteLine("Invalid index!");
+        System.Console.Write("pos = ");
+        int pos = Convert.ToInt32(Console.ReadLine());
+        if (pos <= 1 || pos >= n) {
+            Console.WriteLine("Invalid pos!");
             return;
         }   
-        index--;
+        pos--;
         System.Console.WriteLine("Before inserting:");
         foreach(int i in a) {
             System.Console.Write(i + " ");
         }
-        for(int i=n/2;i>index;i--) {
+        for(int i=n/2;i>pos;i--) {
             a[i] = a[i-1];
         }
-        a[index] = num;
+        a[pos] = num;
         System.Console.WriteLine("\nAfter inserting:");
         foreach(int i in a) {
             System.Console.Write(i + " ");
+        }
+    }
+    public static void SumMainDiagonal() {
+        int n= Convert.ToInt32(Console.ReadLine());
+        int[,] a = new int[n,n];
+        Random random = new Random();
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n;j++) {
+                a[i,j] = random.Next(1,100);
+            }
+        }
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<n;j++) {
+                Console.Write(a[i,j] + " ");
+            }
+            Console.WriteLine();
+        }
+        int sum = 0;
+        for(int i=0;i<n;i++) {
+            sum+=a[i,i];
+        }
+        Console.WriteLine(sum);
+    } 
+    public static void MineSweeperEasy() {
+        int[] dx = {-1,0,1,1,1,0,-1,-1};
+        int[] dy = {-1,-1,-1,0,1,1,1,0};
+        System.Console.Write("Enter the size of the board: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine("Enter mines map: ");
+        string?[] map = new string[n];
+        for(int i=0;i<n;i++) {
+            map[i] = Console.ReadLine();
+        }
+        char[,] res = new char[n,n];
+        for (int i=0;i<n;i++) {
+            for (int j=0;j<n;j++) {
+                if (map[i][j] == '*') res[i,j] = '*';
+                else res[i,j] = '0';
+            }
+        }
+        for (int i=0;i<n;i++) {
+            for (int j=0;j<n;j++) {
+                if (res[i,j] == '*') {
+                    for (int k=0;k<8;k++) {
+                        int x = i + dx[k];
+                        int y = j + dy[k];
+                        if (x >= 0 && x < n && y >= 0 && y < n && res[x,y] != '*') {
+                            res[x,y]++;
+                        }
+                    }
+                }
+            }
+        }
+        System.Console.WriteLine("Result: ");
+        for (int i=0;i<n;i++) {
+            for (int j=0;j<n;j++) {
+                Console.Write(res[i,j]);
+            }
+            Console.WriteLine();
         }
     }
 }
