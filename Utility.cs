@@ -215,4 +215,20 @@ static class Practice
                 break;
         }
     }
+    public static void CountApperance() {
+        System.Console.Write("n = ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[n];
+        Random rand = new Random();
+        for(int i=0;i<n;i++) {
+            a[i] = rand.Next(1,10);
+        }
+        int[] count = new int[10];
+        for(int i=0;i<n;i++) {
+            count[a[i]]++;
+        }
+        for (int i=1;i<=9;i++) {
+            System.Console.WriteLine("Number " + i + " appears " + count[i] + " times");
+        }
+    }
 }
