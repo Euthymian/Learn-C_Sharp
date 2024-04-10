@@ -166,7 +166,9 @@ static class Practice
         System.Console.WriteLine("Enter mines map: ");
         string[] map = new string[n];
         for(int i=0;i<n;i++) {
+#pragma warning disable CS8601 // Possible null reference assignment.
             map[i] = Console.ReadLine();
+#pragma warning restore CS8601 // Possible null reference assignment.
         }
         char[,] res = new char[n,n];
         for (int i=0;i<n;i++) {
