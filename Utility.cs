@@ -110,6 +110,33 @@ static class Practice
             System.Console.Write(i + " ");
         }
     }
+    public static void DeleteArr() {
+        System.Console.Write("n = ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[n];
+        for(int i=0;i<n;i++) {
+            a[i] = i+4;
+        }
+        System.Console.Write("pos = ");
+        int pos = Convert.ToInt32(Console.ReadLine());
+        if (pos <= 1 || pos >= n) {
+            Console.WriteLine("Invalid pos!");
+            return;
+        }   
+        pos--;
+        System.Console.WriteLine("Before deleting:");
+        foreach(int i in a) {
+            System.Console.Write(i + " ");
+        }
+        for(int i=pos;i<n-1;i++) {
+            a[i] = a[i+1];
+        }
+        a[n-1] = 0;
+        System.Console.WriteLine("\nAfter deleting:");
+        foreach(int i in a) {
+            System.Console.Write(i + " ");
+        }
+    }
     public static void SumMainDiagonal() {
         int n= Convert.ToInt32(Console.ReadLine());
         int[,] a = new int[n,n];
