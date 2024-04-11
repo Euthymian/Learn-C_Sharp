@@ -115,7 +115,7 @@ static class Practice
         int n = Convert.ToInt32(Console.ReadLine());
         int[] a = new int[n];
         for(int i=0;i<n;i++) {
-            a[i] = i+4;
+            a[i] = i+1;
         }
         System.Console.Write("pos = ");
         int pos = Convert.ToInt32(Console.ReadLine());
@@ -131,7 +131,7 @@ static class Practice
         for(int i=pos;i<n-1;i++) {
             a[i] = a[i+1];
         }
-        a[n-1] = 0;
+        Array.Resize(ref a,n-1);
         System.Console.WriteLine("\nAfter deleting:");
         foreach(int i in a) {
             System.Console.Write(i + " ");
@@ -166,9 +166,9 @@ static class Practice
         System.Console.WriteLine("Enter mines map: ");
         string[] map = new string[n];
         for(int i=0;i<n;i++) {
-#pragma warning disable CS8601 // Possible null reference assignment.
+            #pragma warning disable CS8601 // Possible null reference assignment.
             map[i] = Console.ReadLine();
-#pragma warning restore CS8601 // Possible null reference assignment.
+            #pragma warning restore CS8601 // Possible null reference assignment.
         }
         char[,] res = new char[n,n];
         for (int i=0;i<n;i++) {
@@ -196,7 +196,7 @@ static class Practice
         }
     }
     public static void TemperatureConverter() {
-        System.Console.WriteLine("___Temperature Converter___\n1: Celsius to Fahrenheit\n2: Fahrenheit to Celsius\nChoose an option: ");
+        System.Console.Write("___Temperature Converter___\n1: Celsius to Fahrenheit\n2: Fahrenheit to Celsius\nChoose an option: ");
         int option = Convert.ToInt32(Console.ReadLine());
         double c,f;
         switch(option) {
@@ -232,5 +232,12 @@ static class Practice
         for (int i=1;i<=9;i++) {
             System.Console.WriteLine("Number " + i + " appears " + count[i] + " times");
         }
+    }
+    public static int[] Test(int[] arr) {
+        arr[0] = 100;
+        return arr;
+    }
+    public static void Test(ref int a) {
+        a = 100;
     }
 }
