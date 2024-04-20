@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<int> numList = new List<int>();
+        // List<int> numList = new List<int>();
         // for (int i = 0; i < 5; i++)
         // {
         //     numList.Add(i);
@@ -30,6 +30,7 @@ internal class Program
         // Practice.Test(ref a);
         // System.Console.WriteLine(a);
 
-        Practice.TemperatureConverter();
+        // Practice.TemperatureConverter();
+        SnakeGame.Run();
     }
 }
