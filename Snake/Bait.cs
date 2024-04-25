@@ -20,7 +20,7 @@ class Bait {
     public void Spawn(int[,] board) {
         this.position.x = rand.Next(120);
         this.position.y = rand.Next(40);
-        while (board[this.position.x, this.position.y] != 0)
+        while (board[this.position.y, this.position.x] != 0)
         {
             this.position.x = rand.Next(120);
             this.position.y = rand.Next(40);

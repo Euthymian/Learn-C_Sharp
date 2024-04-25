@@ -14,8 +14,7 @@ public abstract class Animal
 class Cat : Animal
 {
     protected string Name { get; set; }
-    public Cat(string weight, string height, string name)
-    : base(weight, height)
+    public Cat(string weight, string height, string name) : base(weight, height)
     {
         this.Name = name;
     }

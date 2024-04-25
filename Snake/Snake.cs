@@ -55,7 +55,7 @@ class Snake {
             Console.ForegroundColor = ConsoleColor.White;
         }
     }
-    public void Move(int[,] board)
+    public void Move(int[,] board, ref bool run)
     {
         for (int i=0; i<this.Body.Count; i++)
         {
@@ -65,7 +65,16 @@ class Snake {
             bodyPart.x += this.Direction[i].x;
             bodyPart.y += this.Direction[i].y;
             this.Body[i] = bodyPart;
-            board[this.Body[i].x,this.Body[i].y] = 1;
+
+            if (i==0)
+            {
+                if (board[this.Body[i].y, this.Body[i].x] == 2)
+                {
+                    run = false;
+                }
+            }
+
+            board[this.Body[i].y,this.Body[i].x] = 1;
         }
     }
     public void ChangeDir(Point2D? dir)
@@ -87,12 +96,15 @@ class Snake {
             this.Body.Add(new Point2D(
                 this.Body[this.Body.Count-1].x - this.Direction[this.Direction.Count - 1].x, 
                 this.Body[this.Body.Count - 1].y - this.Direction[this.Direction.Count - 1].y));
-            this.Direction.Add(new Point2D(this.Direction[this.Direction.Count - 1].x, this.Direction[this.Direction.Count - 1].y));
+            this.Direction.Add(new Point2D(
+                this.Direction[this.Direction.Count - 1].x, 
+                this.Direction[this.Direction.Count - 1].y));
         }
     }
-    public void Update(int[,] board, Bait bait)
+    public void Update(int[,] board, Bait bait, ref bool run)
     {
         this.ChangeDir(this.NewDir);
+        this.Move(board,ref run);
         this.Eat(bait);
         this.Length = this.Body.Count;
     }

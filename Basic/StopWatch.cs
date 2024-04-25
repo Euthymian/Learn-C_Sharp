@@ -18,13 +18,13 @@ class StopWatch {
         }
     }
     public void Start() {
-        this.startTime = System.DateTime.Now;
+        this.StartTime = System.DateTime.Now;
     }
     public void Stop() {
-        this.endTime = System.DateTime.Now;
+        this.EndTime = System.DateTime.Now;
     }
     public void GetElapsedTime() {
-        System.TimeSpan elapsedTime = this.endTime - this.startTime;
+        System.TimeSpan elapsedTime = this.EndTime - this.StartTime;
         System.Console.WriteLine("Elapsed time: {0}", elapsedTime.Milliseconds);
     }
 }
