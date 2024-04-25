@@ -94,7 +94,6 @@ class Snake {
     {
         this.ChangeDir(this.NewDir);
         this.Eat(bait);
-        this.Move(board);
         this.Length = this.Body.Count;
     }
 }
