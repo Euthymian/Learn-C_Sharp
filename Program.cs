@@ -35,5 +35,9 @@ internal class Program
         System.Console.WriteLine();
         BaseC baseC = new DerivedC();
         baseC.Invoke();
+
+        System.Console.WriteLine("\n\n");
+        Circle c = new Cylinder(1, "red", 2);
+        System.Console.WriteLine(c.ToString());
     }
 }
