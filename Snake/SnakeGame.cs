@@ -54,7 +54,7 @@ class SnakeGame
             new Wall(new Point2D(6,6), 1, 7, board)
         ];
     }
-    public void Render()
+    private void Render()
     {
         foreach (Wall wall in walls)
         {
@@ -63,7 +63,7 @@ class SnakeGame
         this.bait.Render();
         this.snake.Render();
     }
-    public void Update()
+    private void Update()
     {
         this.bait.Update(this.board);
         this.snake.Update(this.board, this.bait, ref this.run);
