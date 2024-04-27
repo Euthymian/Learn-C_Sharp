@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
-// SnakeGame game = new SnakeGame();
-// game.Run();
+SnakeGame game = new SnakeGame();
+game.Run();
 
 
 // Animal cat = new Cat("20kg", "1.5", "kitty");
@@ -36,14 +36,14 @@ using System;
 // Circle c = new Cylinder(1, "red", 2);
 // System.Console.WriteLine(c.ToString());
 
-Animal1[] animals = [new Tiger(), new Chicken()];
+// Animal1[] animals = [new Tiger(), new Chicken()];
 
-foreach (Animal1 animal in animals)
-{
-    Console.WriteLine(animal.MakeSound());
-    if (animal is Chicken)
-    {
-    IEdible edibler = (Chicken)animal;
-    edibler.HowToEat();
-    }
-}
+// foreach (Animal1 animal in animals)
+// {
+//     Console.WriteLine(animal.MakeSound());
+//     if (animal is Chicken)
+//     {
+//     IEdible edibler = (Chicken)animal;
+//     edibler.HowToEat();
+//     }
+// }
