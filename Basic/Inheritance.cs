@@ -98,3 +98,7 @@ public class DerivedD : DerivedC
 
     // ---> This will cause an error because the method is sealed in the base class
 }
+
+abstract class A {
+    public abstract void Print();
+}

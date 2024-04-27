@@ -1,4 +1,4 @@
-class Circle {
+abstract class Circle {
     protected double radius;
     private string color;
 
