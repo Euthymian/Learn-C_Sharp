@@ -44,8 +44,8 @@ abstract class Vehicle {
     public abstract void Drive();
 }
 
-class Car : Vehicle {
-    public Car(string model) : base(model) {}
+class Carr : Vehicle {
+    public Carr(string model) : base(model) {}
     public override void Drive() {
         System.Console.WriteLine("Driving a car");
     }

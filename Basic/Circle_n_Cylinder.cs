@@ -57,16 +57,3 @@ class Cylinder : Circle {
         return $"raduis: {Radius}, color: {Color}, area: {Area()}, volume: {Volume()}";
     }
 }
-
-class ComparableCircle : Circle, IComparable<ComparableCircle> {
-    public ComparableCircle() : base() {}
-    public ComparableCircle(double radius) : base(radius) { }
-    public ComparableCircle(double radius, string color) : base(radius, color) { }
-    public int CompareTo(ComparableCircle? o) {
-        if (o == null) throw new ArgumentNullException();
-
-        if (radius > o.radius) return 1;
-        else if (radius < o.radius) return -1;
-        else return 1;
-    }
-}

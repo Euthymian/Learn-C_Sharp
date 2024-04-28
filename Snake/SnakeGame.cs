@@ -1,31 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-
-struct Point2D
-{
-    public int x;
-    public int y;
-    public Point2D(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-    public override bool Equals([NotNullWhen(true)] object? obj)
-    {
-        return base.Equals(obj);
-    }
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-    public static bool operator ==(Point2D a, Point2D b)
-    {
-        return a.x == b.x && a.y == b.y;
-    }
-    public static bool operator !=(Point2D a, Point2D b)
-    {
-        return a.x!=b.y || a.y!=b.x;
-    }
-}
 class SnakeGame
 {
     private Snake snake;
