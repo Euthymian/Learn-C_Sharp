@@ -3,68 +3,23 @@ public class Program {
     public static void Main(string[] args) {
         // SnakeGame game = new SnakeGame();
         // game.Run();
-
-        Point2D[] arr = [
-        new Point2D(1, 2),
-        new Point2D(10, 4),
-        new Point2D(3, 6),
-        new Point2D(5, 8),
-        new Point2D(9, 10)
-    ];
-
-    System.Console.WriteLine("Before sorting:");
-    foreach (Point2D p in arr) {
-        System.Console.WriteLine("Point: " + p.x + " " + p.y);
-    }
-    Array.Sort(arr);
-    System.Console.WriteLine("\nAfter sorting:");
-    foreach (Point2D p in arr) {
-        System.Console.WriteLine("Point: " + p.x + " " + p.y);
-    }
-    
-    // Car[] arrayOfCars =
-    // [
-    //     new Car("Ford",1992),
-    //     new Car("Fiat",1988),
-    //     new Car("Buick",1932),
-    //     new Car("Ford",1932),
-    //     new Car("Dodge",1999),
-    //     new Car("Honda",1977)
-    // ];
-
-    // // Write out a header for the output.
-    // Console.WriteLine("Array - Unsorted\n");
-
-    // foreach(Car c in arrayOfCars)
-    //     Console.WriteLine(c.Make + "\t\t" + c.Year);
-
-    // // Demo IComparable by sorting array with "default" sort order.
-    // Array.Sort(arrayOfCars);
-    // Console.WriteLine("\n---------------------\nArray - Sorted by Make (Ascending - IComparable)\n");
-
-    // foreach(Car c in arrayOfCars)
-    //     Console.WriteLine(c.Make + "\t\t" + c.Year);
-
-    // // Demo ascending sort of numeric value with IComparer.
-    // Array.Sort(arrayOfCars,Car.SortYearAscending());
-    // Console.WriteLine("\n---------------------\nArray - Sorted by Year (Ascending - IComparer)\n");
-
-    // foreach(Car c in arrayOfCars)
-    //     Console.WriteLine(c.Make + "\t\t" + c.Year);
-
-    // // Demo descending sort of string value with IComparer.
-    // Array.Sort(arrayOfCars,Car.SortMakeDescending());
-    // Console.WriteLine("\n---------------------\nArray - Sorted by Make (Descending - IComparer)\n");
-
-    // foreach(Car c in arrayOfCars)
-    //     Console.WriteLine(c.Make + "\t\t" + c.Year);
-
-    // // Demo descending sort of numeric value using IComparer.
-    // Array.Sort(arrayOfCars,Car.SortYearDescending());
-    // Console.WriteLine("\n---------------------\nArray - Sorted by Year (Descending - IComparer)\n");
-
-    // foreach(Car c in arrayOfCars)
-    //     Console.WriteLine(c.Make + "\t\t" + c.Year);
+        Shape[] shapes = [
+            new Circle("red", 2),
+            new Rectangle("blue", 3, 4),
+            new Square("green", 5)
+        ];
+        System.Console.WriteLine("Before resizing:");
+        foreach (Shape shape in shapes) {
+            System.Console.WriteLine(shape.ToString());
+        }
+        Random rand = new Random();
+        System.Console.WriteLine("After resizing:");
+        foreach (Shape shape in shapes) {
+            int percent = rand.Next(1, 100);
+            shape.Resize(percent);
+            System.Console.WriteLine($"Resized by {percent}");
+            System.Console.WriteLine(shape.ToString());
+        }
     }
 }
 

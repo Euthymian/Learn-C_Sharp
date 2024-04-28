@@ -1,11 +1,11 @@
-abstract class Circle {
+abstract class Circlee {
     protected double radius;
     private string color;
-    public Circle() {
+    public Circlee() {
         radius = 0;
         color = "Null";
     }
-    public Circle (double radius) {
+    public Circlee (double radius) {
         this.radius = radius;
         color = "Null";
     }
@@ -19,7 +19,7 @@ abstract class Circle {
         set { color = value; }
     }
 
-    public Circle(double radius, string color) {
+    public Circlee(double radius, string color) {
         this.color = color;
         this.radius = radius;
     }
@@ -34,7 +34,7 @@ abstract class Circle {
     }
 }
 
-class Cylinder : Circle {
+class Cylinder : Circlee {
     private double height;
     public Cylinder() : base() {
         height = 0;
