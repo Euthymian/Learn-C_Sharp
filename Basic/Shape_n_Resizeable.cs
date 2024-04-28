@@ -1,8 +1,8 @@
-interface Resizeable {
+interface IResizeable {
     void Resize(double percent);
 }
 
-abstract class Shape : Resizeable {
+abstract class Shape : IResizeable {
     protected string? color;
     public Shape(string color) {
         this.color = color;
