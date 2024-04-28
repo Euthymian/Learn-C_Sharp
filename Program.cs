@@ -1,8 +1,23 @@
 ﻿// See https://aka.ms/new-console-template for more information
 public class Program {
     public static void Main(string[] args) {
-        SnakeGame game = new SnakeGame();
-        game.Run();
+        // SnakeGame game = new SnakeGame();
+        // game.Run();
+
+        ComparableCircle[] circles = new ComparableCircle[3];
+        circles[0] = new ComparableCircle(3.6);
+        circles[1] = new ComparableCircle();
+        circles[2] = new ComparableCircle(3.5, "indigo");
+
+        System.Console.WriteLine("Pre-sorted:");
+        foreach (ComparableCircle circle in circles) {
+            System.Console.WriteLine(circle.ToString());
+        }
+        Array.Sort(circles);
+        System.Console.WriteLine("After-sorted:");
+        foreach (ComparableCircle circle in circles) {
+            System.Console.WriteLine(circle.ToString());
+        }
     }
 }
 

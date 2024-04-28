@@ -1,7 +1,14 @@
 abstract class Circle {
     protected double radius;
     private string color;
-
+    public Circle() {
+        radius = 0;
+        color = "Null";
+    }
+    public Circle (double radius) {
+        this.radius = radius;
+        color = "Null";
+    }
     public double Radius {
         get { return radius; }
         set { radius = value; }
@@ -29,7 +36,9 @@ abstract class Circle {
 
 class Cylinder : Circle {
     private double height;
-
+    public Cylinder() : base() {
+        height = 0;
+    }
     public double Height {
         get { return height; }
         set { height = value; }
@@ -46,5 +55,18 @@ class Cylinder : Circle {
     }
     public override string ToString() {
         return $"raduis: {Radius}, color: {Color}, area: {Area()}, volume: {Volume()}";
+    }
+}
+
+class ComparableCircle : Circle, IComparable<ComparableCircle> {
+    public ComparableCircle() : base() {}
+    public ComparableCircle(double radius) : base(radius) { }
+    public ComparableCircle(double radius, string color) : base(radius, color) { }
+    public int CompareTo(ComparableCircle? o) {
+        if (o == null) throw new ArgumentNullException();
+
+        if (radius > o.radius) return 1;
+        else if (radius < o.radius) return -1;
+        else return 1;
     }
 }
