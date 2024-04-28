@@ -20,6 +20,9 @@ public class Program {
             System.Console.WriteLine($"Resized by {percent}");
             System.Console.WriteLine(shape.ToString());
         }
+        System.Console.WriteLine("Test coloring for Square:");
+        Square square = new Square("green", 5);
+        square.HowToColor();
     }
 }
 

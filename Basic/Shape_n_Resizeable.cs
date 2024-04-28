@@ -2,6 +2,10 @@ interface IResizeable {
     void Resize(double percent);
 }
 
+interface IColoeable {
+    void HowToColor();
+}
+
 abstract class Shape : IResizeable {
     protected string? color;
     public Shape(string color) {
@@ -48,7 +52,7 @@ class Rectangle : Shape {
     }
 }
 
-class Square : Shape {
+class Square : Shape, IColoeable {
     private double side;
     public Square(string color, double side) : base(color) {
         this.side = side;
@@ -58,6 +62,10 @@ class Square : Shape {
     }
     public override void Resize(double percent) {
         side *= percent / 100;
+    }
+    public void HowToColor()
+    {
+        System.Console.WriteLine("Color all four sides");
     }
     public override string ToString()
     {
