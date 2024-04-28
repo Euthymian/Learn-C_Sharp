@@ -2,7 +2,7 @@ interface IResizeable {
     void Resize(double percent);
 }
 
-interface IColoeable {
+interface IColorable {
     void HowToColor();
 }
 
@@ -52,7 +52,7 @@ class Rectangle : Shape {
     }
 }
 
-class Square : Shape, IColoeable {
+class Square : Shape, IColorable {
     private double side;
     public Square(string color, double side) : base(color) {
         this.side = side;
