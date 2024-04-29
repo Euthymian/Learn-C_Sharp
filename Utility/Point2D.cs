@@ -43,6 +43,17 @@ struct Point2D : IComparable<Point2D>
         return -1 means the actual Point2D should be before the other Point2D
         return 0 means keep the order
         */
+
+        /*
+        Other way to understand:
+        In C++, the comparator function will be ruled by the return value
+        when we compare 2 elements by their passing order (file test.cpp). 
+        
+        In C#, the comparator function will be ruled by the return value
+        when we compare 2 elements by their reversed order 
+        (line 59 file Icomparable_n_IComparer.cs).
+        */ 
+        
     }
 }
 

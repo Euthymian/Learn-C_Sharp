@@ -3,26 +3,17 @@ public class Program {
     public static void Main(string[] args) {
         // SnakeGame game = new SnakeGame();
         // game.Run();
-        Shape[] shapes = [
-            new Circle("red", 2),
-            new Rectangle("blue", 3, 4),
-            new Square("green", 5)
-        ];
-        System.Console.WriteLine("Before resizing:");
-        foreach (Shape shape in shapes) {
-            System.Console.WriteLine(shape.ToString());
-        }
-        Random rand = new Random();
-        System.Console.WriteLine("After resizing:");
-        foreach (Shape shape in shapes) {
-            int percent = rand.Next(1, 100);
-            shape.Resize(percent);
-            System.Console.WriteLine($"Resized by {percent}");
-            System.Console.WriteLine(shape.ToString());
-        }
-        System.Console.WriteLine("Test coloring for Square:");
-        Square square = new Square("green", 5);
-        square.HowToColor();
+        
+        // try
+        // {
+        //     char[] characters = { 'a', 'b', 'c', 'd', 'e', 'f' };
+
+        //     int value = characters[6];
+        // }
+        // catch (IndexOutOfRangeException ex)
+        // {
+        //     System.Console.WriteLine("haha");
+        // }
     }
 }
 
