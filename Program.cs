@@ -1,10 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Anime;
+using Shounen;
 public class Program {
     public static void Main(string[] args) {
         // SnakeGame game = new SnakeGame();
         // game.Run();
 
-        LearnStream.Run();
+        // LearnStream.Run();
 
         // try
         // {
@@ -16,6 +18,12 @@ public class Program {
         // {
         //     System.Console.WriteLine("haha");
         // }
+
+        GokuFan goku = new GokuFan();
+        goku.Display();
+
+        Shounen.GokuFan goku1 = new Shounen.GokuFan();
+        goku1.Display();
     }
 }
 
