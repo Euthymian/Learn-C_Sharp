@@ -32,7 +32,9 @@ class Chicken : Animal1, IEdible {
     public override string MakeSound() {
         return "Chicken: cluck-cluck!";
     }
-    public void HowToEat() {
+
+    void IEdible.HowToEat() {
+        // Another way to implement interface method
         System.Console.WriteLine("Eating chicken");
     }
 }

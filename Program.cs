@@ -3,7 +3,9 @@ public class Program {
     public static void Main(string[] args) {
         // SnakeGame game = new SnakeGame();
         // game.Run();
-        
+
+        LearnStream.Run();
+
         // try
         // {
         //     char[] characters = { 'a', 'b', 'c', 'd', 'e', 'f' };
